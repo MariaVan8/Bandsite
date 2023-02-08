@@ -46,7 +46,7 @@
   justify-content: flex-start;
   justify-items: center;
   margin: 0;
-  padding-top: 35%;
+  padding-top: 6rem;
   padding-left: 2%;
   font-size: 2rem;
 }
@@ -65,4 +65,29 @@
 }
 .gallery__title {
   font-size: 2rem;
+}
+.gallery__image {
+  margin: 1rem 0.5rem 0.1rem;
+}
+
+.footer {
+  background-color: #323232;
+  color: #ffffff;
+  margin: 0 auto;
+  padding-left: 1rem;
+}
+.footer__wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 0 auto;
+}
+.footer__title {
+  padding: 1.2rem 0 0 0;
+  font-size: 2rem;
+}
+.footer__icon {
+  width: 2rem;
+  height: 2rem;
 }/*# sourceMappingURL=styles.css.map */

@@ -50,7 +50,7 @@
     justify-content: flex-start;
     justify-items: center;
     margin: 0;
-    padding-top: 35%;
+    padding-top: 6rem;
     padding-left: 2%;
     font-size: 2rem;
   }
@@ -71,5 +71,29 @@
   }
   &__title {
     font-size: 2rem;
+  }
+  &__image {
+    margin: 1rem 0.5rem 0.1rem;
+  }
+}
+.footer {
+  background-color: $primary-color;
+  color: $primary-color-clear;
+  margin: 0 auto;
+  padding-left: 1rem;
+  &__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+  &__title {
+    padding: 1.2rem 0 0 0;
+    font-size: 2rem;
+  }
+  &__icon {
+    width: 2rem;
+    height: 2rem;
   }
 }
