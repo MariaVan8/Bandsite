@@ -1,0 +1,75 @@
+@use "./partials/fonts" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+// nav bar
+.nav {
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+    height: 5rem;
+    max-width: 100%;
+  }
+  &__menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: $primary-color;
+  }
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    color: $primary-color-clear;
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__item--special:current {
+    border-bottom: 2px solid $primary-color-clear;
+  }
+}
+
+.hero {
+  background-image: url(../assets/Images/hero-bio.jpg);
+  background-size: cover;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  height: 15rem;
+  width: 100%;
+  padding: 0;
+  margin-top: 0;
+  &__title {
+    color: $primary-color-clear;
+    display: flex;
+    justify-content: flex-start;
+    justify-items: center;
+    margin: 0;
+    padding-top: 35%;
+    padding-left: 2%;
+    font-size: 2rem;
+  }
+}
+.card {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: 2rem;
+  }
+}
+.gallery {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: 2rem;
+  }
+}
