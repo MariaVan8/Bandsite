@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .nav__logo {
@@ -29,7 +31,7 @@
 }
 
 .hero {
-  background-image: url(../assets/Images/hero-bio.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/Images/hero-bio.jpg);
   background-size: cover;
   -o-object-fit: cover;
      object-fit: cover;
@@ -67,27 +69,78 @@
   font-size: 2rem;
 }
 .gallery__image {
-  margin: 1rem 0.5rem 0.1rem;
+  margin: 1rem 0.5rem;
 }
 
 .footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   background-color: #323232;
   color: #ffffff;
-  margin: 0 auto;
   padding-left: 1rem;
+  padding-right: 1rem;
 }
-.footer__wrapper {
+@media (min-width: 780px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.footer__logo--top {
+  display: none;
+}
+@media (min-width: 780px) {
+  .footer__logo--top {
+    display: contents;
+  }
+}
+@media (min-width: 780px) {
+  .footer__logo--bottom {
+    display: none;
+  }
+}
+.footer__item {
+  width: 25%;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  list-style-type: none;
+}
+@media (min-width: 780px) {
+  .footer__item--large {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.footer__socials {
+  display: flex;
+  flex-direction: row;
   gap: 2rem;
-  margin: 0 auto;
+}
+@media (min-width: 780px) {
+  .footer__socials {
+    justify-self: auto;
+    align-items: end;
+    display: flex;
+    padding-right: 6.2rem;
+  }
 }
 .footer__title {
-  padding: 1.2rem 0 0 0;
-  font-size: 2rem;
+  display: flex;
+  text-align: left;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+.footer__text {
+  padding-bottom: 2rem;
 }
 .footer__icon {
-  width: 2rem;
-  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2rem;
+}
+.footer__logo {
+  height: 30px;
+  width: 120px;
 }/*# sourceMappingURL=styles.css.map */

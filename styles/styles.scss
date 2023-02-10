@@ -4,6 +4,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 // nav bar
 .nav {
@@ -35,7 +37,8 @@
 }
 
 .hero {
-  background-image: url(../assets/Images/hero-bio.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../assets/Images/hero-bio.jpg);
   background-size: cover;
   object-fit: cover;
   display: flex;
@@ -73,27 +76,78 @@
     font-size: 2rem;
   }
   &__image {
-    margin: 1rem 0.5rem 0.1rem;
+    margin: 1rem 0.5rem;
   }
 }
 .footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   background-color: $primary-color;
   color: $primary-color-clear;
-  margin: 0 auto;
   padding-left: 1rem;
-  &__wrapper {
+  padding-right: 1rem;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__logo--top {
+    display: none;
+    @include tablet {
+      display: contents;
+    }
+  }
+  &__logo--bottom {
+    @include tablet {
+      display: none;
+    }
+  }
+  &__item {
+    width: 25%;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    list-style-type: none;
+    // @media (min-width: 780px) {
+    //   flex-direction: row;
+    //   justify-content: flex-start;
+    // }
+  }
+  &__item--large {
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__socials {
+    display: flex;
+    flex-direction: row;
     gap: 2rem;
-    margin: 0 auto;
+    @include tablet {
+      justify-self: auto;
+      align-items: end;
+      display: flex;
+      padding-right: 6.2rem;
+    }
   }
   &__title {
-    padding: 1.2rem 0 0 0;
-    font-size: 2rem;
+    display: flex;
+    text-align: left;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+  &__text {
+    padding-bottom: 2rem;
   }
   &__icon {
-    width: 2rem;
-    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2rem;
+  }
+  &__logo {
+    // width: 6rem;
+    // height: 3rem;
+    height: 30px;
+    width: 120px;
   }
 }
