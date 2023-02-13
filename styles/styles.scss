@@ -20,7 +20,6 @@ img {
 // nav bar
 .nav {
   height: 5rem;
-  display: flex;
   @include desktop {
     height: 8rem;
     padding: 3.5rem;
