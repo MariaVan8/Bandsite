@@ -8,37 +8,50 @@
   padding: 0;
   font-family: "AvenirNext LT Pro";
 }
+.body {
+  font-size: 24px;
+  line-height: 32px;
+  // font-weight: 700;
+}
 
 img {
   max-width: 100%;
 }
 // nav bar
 .nav {
+  height: 5rem;
+  @include desktop {
+    height: 8rem;
+  }
+
   &__logo-first {
-    height: 2rem;
+    height: 1.4rem;
     padding-top: 0rem;
     @include tablet {
-      height: 1.5rem;
+      height: 1.2rem;
+    }
+    @include desktop {
+      padding-left: 4rem;
     }
   }
-  @include tablet {
-    align-items: center;
-  }
+
   &__logo {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $primary-color;
-    height: 5rem;
+    height: 3rem;
     max-width: 100%;
-    padding-top: 2rem;
   }
   &__menu {
     display: flex;
     align-items: center;
     background-color: $primary-color;
+    padding-top: 0.2rem;
     @include tablet {
       height: 100%;
+      align-items: center;
+      gap: 3rem;
     }
   }
   &__items {
@@ -50,42 +63,42 @@ img {
   &__link {
     text-decoration: none;
     color: $primary-color-clear;
-    font-size: 1.5rem;
+    font-size: 0.85rem;
     width: 50%;
     text-align: center;
+    padding-bottom: 0.7rem;
+    font-weight: 400;
     @include tablet {
       height: 100%;
+      display: flex;
+      align-items: center;
+      padding-top: 0.7rem;
+      justify-content: center;
     }
   }
   &__link--special {
-    padding: 1rem;
-    border-bottom: 5px solid $primary-color-clear;
-
+    border-bottom: 3px solid $primary-color-clear;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
     @include tablet {
       height: 100%;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-      width: 8.2rem;
+      padding-top: 1.3rem;
+      padding-bottom: 1.2rem;
+      width: 5.8rem;
     }
   }
-  // &__item--special:current {
-  //   border-bottom: 2px solid $primary-color-clear;
-  // }
+
   @include tablet {
     background-color: $primary-color;
     display: flex;
     justify-content: start;
     gap: 4rem;
+    align-items: center;
+    height: 4rem;
     &__logo {
       padding: 2rem;
     }
-    &__menu {
-      align-items: center;
-      gap: 3rem;
-    }
-    // &__item--special {
-    //   border-bottom: 2px solid $primary-color-clear;
-    // }
   }
 }
 
@@ -96,24 +109,34 @@ img {
   background-position: center;
   display: flex;
   flex-direction: column;
-  height: 22rem;
+  height: 12rem;
   width: 100%;
   padding: 0;
   margin-top: 0;
   @include tablet {
-    height: 30rem;
+    height: 25rem;
+  }
+  @include desktop {
+    height: 40rem;
   }
   &__title {
     color: $primary-color-clear;
     display: flex;
-    justify-content: flex-start;
-    justify-items: center;
-    margin: 0;
-    padding-top: 10rem;
+    justify-content: start;
+    align-items: center;
+    // margin: 0;
+    position: relative;
     padding-left: 2%;
-    font-size: 2rem;
+    font-weight: 700;
+    padding-top: 5rem;
     @include tablet {
-      padding-top: 14rem;
+      align-items: center;
+      font-size: 3.75rem;
+      padding-top: 10rem;
+      padding-left: 2rem;
+    }
+    @include desktop {
+      padding-top: 20rem;
     }
   }
 }
@@ -122,53 +145,71 @@ img {
   &__wrapper {
     display: flex;
     flex-direction: column;
-    padding: 0 1rem;
     @include tablet {
       padding: 0 5rem;
     }
+    @include desktop {
+      padding: 0 10rem;
+    }
     &__paragraphs {
-      padding: 1rem 1rem;
+      padding-top: 1rem;
       @include tablet {
         display: flex;
         gap: 2rem;
         padding: 1rem 5rem;
       }
+      @include desktop {
+        padding: 1rem 10rem;
+      }
     }
   }
   &__image {
     object-fit: cover;
-    height: 20rem;
+    height: 10rem;
+    @include tablet {
+      height: 20rem;
+    }
+    @include desktop {
+      height: 30rem;
+      padding-top: 1rem;
+    }
   }
   &__title {
-    font-size: 3rem;
-    padding: 2rem 2rem 2rem 0.5rem;
+    padding: 1.5rem 2rem 1rem 0.1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
     @include tablet {
       padding-left: 2rem;
+      font-size: 2.25rem;
     }
-
-    // @include tablet {
-    //   padding: left 2rem;
-    //   padding-right: 2rem;
-    // }
   }
   &__subtitle {
     text-align: left;
-    padding: 1.5rem 1rem 0rem;
-    font-weight: 600;
+    padding: 1.75rem 1rem 0rem 0rem;
+    font-weight: 700;
     @include tablet {
       padding-left: 5rem;
+      font-weight: 700;
     }
-    // padding: 2rem 5rem 0rem;
+    @include desktop {
+      padding-left: 10rem;
+    }
   }
   &__text {
-    // padding-bottom: 1rem;
     padding-bottom: 1rem;
+    font-size: 0.81rem;
+    font-weight: 400;
   }
   &__text--special {
-    padding-top: 2rem;
+    padding-top: 1rem;
+    font-size: 0.87rem;
+    font-weight: 500;
   }
   &__quote {
     padding-top: 0;
+    font-size: 0.81rem;
+    font-weight: 500;
+    height: 1rem;
   }
 }
 .gallery {
@@ -181,7 +222,6 @@ img {
     justify-content: center;
     margin: 0;
     padding: 0;
-    // flex-direction: column;
 
     @include tablet {
       display: flex;
@@ -194,7 +234,8 @@ img {
   }
   &__title {
     font-size: 2rem;
-    padding-left: 0.5rem;
+    font-weight: 500;
+    padding: 1rem 0;
     @include tablet {
     }
   }
@@ -214,6 +255,7 @@ img {
   color: $primary-color-clear;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 2rem;
   @include tablet {
     flex-direction: row;
     justify-content: space-between;
@@ -234,7 +276,6 @@ img {
     display: flex;
     flex-direction: column;
     width: 100%;
-    list-style-type: none;
   }
   &__item--large {
     @include tablet {
@@ -250,18 +291,38 @@ img {
       justify-self: auto;
       align-items: end;
       display: flex;
-      padding-right: 6.2rem;
+      padding-right: 8.2rem;
     }
   }
   &__title {
     display: flex;
     text-align: left;
-    padding-bottom: 2rem;
-    padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
   }
+
   &__text {
-    padding-bottom: 2rem;
+    font-size: 0.81rem;
+    font-weight: 400;
   }
+  &__email {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    font-size: 0.81rem;
+    font-weight: 400;
+  }
+  &__text-special {
+    font-size: 0.81rem;
+    font-weight: 500;
+  }
+  &__separator {
+    padding-top: 1rem;
+    font-weight: 400;
+    font-size: 0.81rem;
+  }
+
   &__icon {
     display: flex;
     flex-direction: row;
