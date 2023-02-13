@@ -20,10 +20,11 @@ img {
 // nav bar
 .nav {
   height: 5rem;
+  display: flex;
   @include desktop {
     height: 8rem;
+    padding: 3.5rem;
   }
-
   &__logo-first {
     height: 1.4rem;
     padding-top: 0rem;
@@ -86,6 +87,10 @@ img {
       padding-top: 1.3rem;
       padding-bottom: 1.2rem;
       width: 5.8rem;
+    }
+    @include desktop {
+      padding-top: 3.3rem;
+      padding-bottom: 3.2rem;
     }
   }
 
@@ -215,6 +220,9 @@ img {
 .gallery {
   background-color: $secondary-color-lighter;
   padding: 1rem;
+  @include desktop {
+    padding: 3rem 6rem 1rem 6rem;
+  }
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -233,10 +241,11 @@ img {
     }
   }
   &__title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 500;
     padding: 1rem 0;
-    @include tablet {
+    @include desktop {
+      padding-bottom: 3rem;
     }
   }
   &__image {
@@ -260,10 +269,19 @@ img {
     flex-direction: row;
     justify-content: space-between;
   }
+  @include desktop {
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 4rem 1rem 6rem;
+  }
   &__logo--top {
     display: none;
     @include tablet {
       display: contents;
+    }
+    @include desktop {
+      display: contents;
+      padding-left: 8rem;
     }
   }
   &__logo--bottom {
@@ -282,6 +300,10 @@ img {
       flex-direction: row;
       justify-content: space-between;
     }
+    @include desktop {
+      justify-content: flex-start;
+      gap: 1rem;
+    }
   }
   &__socials {
     display: flex;
@@ -291,7 +313,8 @@ img {
       justify-self: auto;
       align-items: end;
       display: flex;
-      padding-right: 8.2rem;
+      padding-right: 36rem;
+      padding-left: 5.8rem;
     }
   }
   &__title {
@@ -312,15 +335,25 @@ img {
     padding-top: 1.5rem;
     font-size: 0.81rem;
     font-weight: 400;
+    @include desktop {
+      padding-bottom: 0;
+    }
   }
   &__text-special {
     font-size: 0.81rem;
     font-weight: 500;
+    @include desktop {
+      padding-right: 6rem;
+    }
   }
   &__separator {
     padding-top: 1rem;
     font-weight: 400;
     font-size: 0.81rem;
+    @include desktop {
+      padding-top: 2rem;
+      font-size: 1rem;
+    }
   }
 
   &__icon {

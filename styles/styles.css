@@ -37,10 +37,12 @@ img {
 
 .nav {
   height: 5rem;
+  display: flex;
 }
 @media (min-width: 1280px) {
   .nav {
     height: 8rem;
+    padding: 3.5rem;
   }
 }
 .nav__logo-first {
@@ -114,6 +116,12 @@ img {
     padding-top: 1.3rem;
     padding-bottom: 1.2rem;
     width: 5.8rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nav__link--special {
+    padding-top: 3.3rem;
+    padding-bottom: 3.2rem;
   }
 }
 @media (min-width: 780px) {
@@ -271,6 +279,11 @@ img {
   background-color: #fafafa;
   padding: 1rem;
 }
+@media (min-width: 1280px) {
+  .gallery {
+    padding: 3rem 6rem 1rem 6rem;
+  }
+}
 .gallery__wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -290,9 +303,14 @@ img {
   }
 }
 .gallery__title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 500;
   padding: 1rem 0;
+}
+@media (min-width: 1280px) {
+  .gallery__title {
+    padding-bottom: 3rem;
+  }
 }
 .gallery__image {
   margin: 0;
@@ -320,12 +338,25 @@ img {
     justify-content: space-between;
   }
 }
+@media (min-width: 1280px) {
+  .footer {
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 4rem 1rem 6rem;
+  }
+}
 .footer__logo--top {
   display: none;
 }
 @media (min-width: 780px) {
   .footer__logo--top {
     display: contents;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__logo--top {
+    display: contents;
+    padding-left: 8rem;
   }
 }
 @media (min-width: 780px) {
@@ -345,6 +376,12 @@ img {
     justify-content: space-between;
   }
 }
+@media (min-width: 1280px) {
+  .footer__item--large {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}
 .footer__socials {
   display: flex;
   flex-direction: row;
@@ -355,7 +392,8 @@ img {
     justify-self: auto;
     align-items: end;
     display: flex;
-    padding-right: 8.2rem;
+    padding-right: 36rem;
+    padding-left: 5.8rem;
   }
 }
 .footer__title {
@@ -376,14 +414,30 @@ img {
   font-size: 0.81rem;
   font-weight: 400;
 }
+@media (min-width: 1280px) {
+  .footer__email {
+    padding-bottom: 0;
+  }
+}
 .footer__text-special {
   font-size: 0.81rem;
   font-weight: 500;
+}
+@media (min-width: 1280px) {
+  .footer__text-special {
+    padding-right: 6rem;
+  }
 }
 .footer__separator {
   padding-top: 1rem;
   font-weight: 400;
   font-size: 0.81rem;
+}
+@media (min-width: 1280px) {
+  .footer__separator {
+    padding-top: 2rem;
+    font-size: 1rem;
+  }
 }
 .footer__icon {
   display: flex;
