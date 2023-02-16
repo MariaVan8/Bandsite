@@ -1,0 +1,362 @@
+@use "./partials/fonts" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirNext LT Pro";
+}
+.body {
+  font-size: 24px;
+  line-height: 32px;
+  // font-weight: 700;
+}
+
+img {
+  max-width: 100%;
+}
+// nav bar
+.nav {
+  height: 5rem;
+  @include desktop {
+    height: 8rem;
+    padding: 3.5rem;
+  }
+  &__logo-first {
+    height: 1.4rem;
+    padding-top: 0rem;
+    @include tablet {
+      height: 1.2rem;
+    }
+    @include desktop {
+      padding-left: 4rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+    height: 3rem;
+    max-width: 100%;
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    background-color: $primary-color;
+    padding-top: 0.2rem;
+    @include tablet {
+      height: 100%;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    color: $primary-color-clear;
+  }
+  &__link {
+    text-decoration: none;
+    color: $primary-color-clear;
+    font-size: 0.85rem;
+    width: 50%;
+    text-align: center;
+    padding-bottom: 0.7rem;
+    font-weight: 400;
+    @include tablet {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding-top: 0.7rem;
+      justify-content: center;
+    }
+  }
+  &__link--special {
+    border-bottom: 3px solid $primary-color-clear;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    @include tablet {
+      height: 100%;
+      padding-top: 1.3rem;
+      padding-bottom: 1.2rem;
+      width: 5.8rem;
+    }
+    @include desktop {
+      padding-top: 3.3rem;
+      padding-bottom: 3.2rem;
+    }
+  }
+
+  @include tablet {
+    background-color: $primary-color;
+    display: flex;
+    justify-content: start;
+    gap: 4rem;
+    align-items: center;
+    height: 4rem;
+    &__logo {
+      padding: 2rem;
+    }
+  }
+}
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../assets/Images/hero-shows.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  width: 100%;
+  padding: 0;
+  margin-top: 0;
+  @include tablet {
+    height: 25rem;
+  }
+  @include desktop {
+    height: 40rem;
+  }
+  &__title--container {
+    // display: flex;
+    // justify-content: space-between;
+    // flex-direction: column;
+    padding: 1.5rem;
+    height: 20rem;
+  }
+  &__title {
+    color: $primary-color-clear;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    font-weight: 700;
+    // padding-top: 1rem;
+    font-size: 2rem;
+
+    @include tablet {
+      align-items: center;
+      font-size: 3.75rem;
+      // padding-top: 1rem;
+    }
+    @include desktop {
+      padding-top: 20rem;
+    }
+  }
+  &__lower-title {
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+  }
+  &__small-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $primary-color-clear;
+    display: block;
+    justify-content: center;
+  }
+  &__frame {
+    height: 1rem;
+  }
+}
+.shows {
+  height: 350vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    padding: 1rem 1rem 1rem 0rem;
+    @include tablet {
+      padding-left: 2.2rem;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid gray;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0.5rem 1.5rem;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    gap: 1rem;
+  }
+  &__wrapper-special {
+    @include tablet {
+      gap: 2rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+  &__subtitle {
+    color: gray;
+    font-weight: 500;
+  }
+  &__subtitle__special {
+    @include tablet {
+      display: none;
+    }
+  }
+  &__date {
+    font-weight: 500;
+  }
+  &__button {
+    padding: 1rem 0.2rem 1rem 0.2rem;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 5px;
+    @include tablet {
+      padding: 1rem 2.2rem 1rem 2.2rem;
+    }
+    &__button-special {
+      @include tablet {
+        padding-bottom: 2rem;
+      }
+    }
+  }
+  @include tablet {
+    display: flex;
+  }
+  &__wrapper-test {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: $primary-color;
+  color: $primary-color-clear;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @include desktop {
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 4rem 1rem 6rem;
+  }
+  &__logo--top {
+    display: none;
+    @include tablet {
+      display: contents;
+    }
+    @include desktop {
+      display: contents;
+      padding-left: 8rem;
+    }
+  }
+  &__logo--bottom {
+    @include tablet {
+      display: none;
+    }
+  }
+  &__item {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__item--large {
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include desktop {
+      justify-content: flex-start;
+      gap: 1rem;
+    }
+  }
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    @include tablet {
+      justify-self: auto;
+      align-items: end;
+      display: flex;
+      padding-right: 14rem;
+    }
+    @include desktop {
+      padding-right: 25rem;
+    }
+  }
+  &__title {
+    display: flex;
+    text-align: left;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    @include tablet {
+      padding-right: 6rem;
+    }
+  }
+
+  &__text {
+    font-size: 0.81rem;
+    font-weight: 400;
+  }
+  &__email {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    font-size: 0.81rem;
+    font-weight: 400;
+    @include desktop {
+      padding-bottom: 0;
+    }
+  }
+  &__text-special {
+    font-size: 0.81rem;
+    font-weight: 500;
+    @include desktop {
+      padding-right: 6rem;
+    }
+  }
+  &__separator {
+    padding-top: 1rem;
+    font-weight: 400;
+    font-size: 0.81rem;
+    @include desktop {
+      padding-top: 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2rem;
+  }
+  &__logo {
+    height: 30px;
+    width: 120px;
+    @include desktop {
+      padding-left: 5rem;
+    }
+  }
+}

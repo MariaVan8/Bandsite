@@ -255,6 +255,133 @@ img {
     }
   }
 }
+
+.comment {
+  &__title {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 60vh;
+    gap: 3rem;
+    padding: 1rem 2.5rem;
+  }
+  &__left {
+    width: 4rem;
+    display: flex;
+    margin-top: 1rem;
+  }
+  &__image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__name {
+    padding: 1rem;
+    border-radius: 2px;
+  }
+  &__text {
+    padding: 3rem;
+    border-radius: 2px;
+    text-align: left;
+  }
+  &__button {
+    background-color: black;
+    color: white;
+    font-weight: 700;
+  }
+}
+
+.review {
+  &__title {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 3rem;
+    padding: 1rem 2.5rem;
+  }
+  &__left {
+    width: 4rem;
+    display: flex;
+    margin-top: 1rem;
+  }
+  &__image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__name {
+    padding: 1rem;
+    border-radius: 2px;
+  }
+  &__text {
+    padding: 3rem;
+    border-radius: 2px;
+    text-align: left;
+  }
+  &__button {
+    background-color: black;
+    color: white;
+    font-weight: 700;
+  }
+}
+
+// .review {
+//   display: flex;
+//   flex-direction: row;
+
+//   &__wrapper {
+//     display: flex;
+//     justify-content: space-between;
+//     max-width: 100%;
+//     padding: 1rem 2rem;
+//     gap: 2rem;
+//     flex-direction: column;
+//     // align-items: center;
+//   }
+//   &__wrapper-container {
+//     display: flex;
+//     flex-direction: row;
+//   }
+//   &__left {
+//     display: flex;
+//     margin: 2rem;
+//   }
+//   &__title {
+//     font-weight: 700;
+//   }
+//   &__image {
+//     width: 4rem;
+//     height: 4rem;
+//     border-radius: 50%;
+//     position: relative;
+//     display: flex;
+//   }
+//   &__text {
+//     display: flex;
+//   }
+// }
 .footer {
   display: flex;
   flex-wrap: wrap;
@@ -312,8 +439,10 @@ img {
       justify-self: auto;
       align-items: end;
       display: flex;
-      padding-right: 36rem;
-      padding-left: 5.8rem;
+      padding-right: 14rem;
+    }
+    @include desktop {
+      padding-right: 25rem;
     }
   }
   &__title {
@@ -323,6 +452,9 @@ img {
     padding-top: 1rem;
     font-size: 2rem;
     font-weight: 500;
+    @include tablet {
+      padding-right: 6rem;
+    }
   }
 
   &__text {
@@ -363,5 +495,8 @@ img {
   &__logo {
     height: 30px;
     width: 120px;
+    @include desktop {
+      padding-left: 5rem;
+    }
   }
 }
