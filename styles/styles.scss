@@ -260,6 +260,7 @@ img {
   &__title {
     font-weight: 700;
     font-size: 2rem;
+    padding: 1rem 1rem 0.5rem 2.5rem;
   }
   &__wrapper {
     display: flex;
@@ -301,87 +302,52 @@ img {
     font-weight: 700;
   }
 }
-
-.review {
-  &__title {
-    font-weight: 700;
-    font-size: 2rem;
-  }
+.comments__section {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
   &__wrapper {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    width: 100%;
-    gap: 3rem;
-    padding: 1rem 2.5rem;
+    gap: 1rem;
+    padding-top: 1rem;
   }
   &__left {
-    width: 4rem;
     display: flex;
-    margin-top: 1rem;
+    padding-top: 1rem;
   }
-  &__image {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    position: relative;
-  }
-
   &__right {
     display: flex;
     flex-direction: column;
-    width: 100%;
-  }
-  &__name {
-    padding: 1rem;
-    border-radius: 2px;
-  }
-  &__text {
-    padding: 3rem;
-    border-radius: 2px;
-    text-align: left;
-  }
-  &__button {
-    background-color: black;
-    color: white;
-    font-weight: 700;
   }
 }
-
-// .review {
-//   display: flex;
-//   flex-direction: row;
-
-//   &__wrapper {
-//     display: flex;
-//     justify-content: space-between;
-//     max-width: 100%;
-//     padding: 1rem 2rem;
-//     gap: 2rem;
-//     flex-direction: column;
-//     // align-items: center;
-//   }
-//   &__wrapper-container {
-//     display: flex;
-//     flex-direction: row;
-//   }
-//   &__left {
-//     display: flex;
-//     margin: 2rem;
-//   }
-//   &__title {
-//     font-weight: 700;
-//   }
-//   &__image {
-//     width: 4rem;
-//     height: 4rem;
-//     border-radius: 50%;
-//     position: relative;
-//     display: flex;
-//   }
-//   &__text {
-//     display: flex;
-//   }
-// }
+.comment {
+  gap: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-self: start;
+  &__left {
+    display: flex;
+    &__title {
+      font-weight: 700;
+      font-size: 2rem;
+      justify-content: left;
+      align-items: flex-start;
+      display: flex;
+    }
+  }
+}
+#comment-list {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
 .footer {
   display: flex;
   flex-wrap: wrap;

@@ -324,6 +324,7 @@ img {
 .comment__title {
   font-weight: 700;
   font-size: 2rem;
+  padding: 1rem 1rem 0.5rem 2.5rem;
 }
 .comment__wrapper {
   display: flex;
@@ -364,46 +365,53 @@ img {
   font-weight: 700;
 }
 
-.review__title {
-  font-weight: 700;
-  font-size: 2rem;
-}
-.review__wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  gap: 3rem;
-  padding: 1rem 2.5rem;
-}
-.review__left {
-  width: 4rem;
-  display: flex;
-  margin-top: 1rem;
-}
-.review__image {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  position: relative;
-}
-.review__right {
+.comments__section {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
 }
-.review__name {
-  padding: 1rem;
-  border-radius: 2px;
+.comments__section__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1rem;
 }
-.review__text {
-  padding: 3rem;
-  border-radius: 2px;
-  text-align: left;
+.comments__section__left {
+  display: flex;
+  padding-top: 1rem;
 }
-.review__button {
-  background-color: black;
-  color: white;
+.comments__section__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  gap: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-self: start;
+}
+.comment__left {
+  display: flex;
+}
+.comment__left__title {
   font-weight: 700;
+  font-size: 2rem;
+  justify-content: left;
+  align-items: flex-start;
+  display: flex;
+}
+
+#comment-list {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
 }
 
 .footer {

@@ -26,13 +26,17 @@
   font-family: "AvenirNext LT Pro";
 }
 
-.body {
+body {
   font-size: 24px;
   line-height: 32px;
 }
 
 img {
   max-width: 100%;
+}
+
+li {
+  list-style: none;
 }
 
 .nav {
@@ -198,91 +202,66 @@ img {
   height: 1rem;
 }
 
-.shows {
-  height: 350vh;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
+.schedule {
+  height: 150vh;
+  padding: 2rem;
 }
-@media (min-width: 780px) {
-  .shows {
-    display: flex;
-    flex-direction: column;
-  }
+.schedule__title {
+  margin: 3rem 1rem 0rem 2rem;
 }
-.shows__title {
-  padding: 1rem 1rem 1rem 0rem;
-}
-@media (min-width: 780px) {
-  .shows__title {
-    padding-left: 2.2rem;
-  }
-}
-.shows__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 1rem;
-  border-bottom: 3px solid gray;
-}
-@media (min-width: 780px) {
-  .shows__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0.5rem 1.5rem;
-  }
-}
-.shows__wrapper {
-  display: flex;
-  flex-direction: column;
-  padding-top: 1rem;
-  gap: 1rem;
-}
-@media (min-width: 780px) {
-  .shows__wrapper-special {
-    gap: 2rem;
-    padding-bottom: 1.5rem;
-  }
-}
-.shows__subtitle {
-  color: gray;
+.schedule__main {
+  font-size: 1rem;
   font-weight: 500;
+  color: gray;
 }
 @media (min-width: 780px) {
-  .shows__subtitle__special {
+  .schedule__main {
     display: none;
   }
 }
-.shows__date {
+.schedule__secondary {
+  font-size: 0.9rem;
   font-weight: 500;
 }
-.shows__button {
-  padding: 1rem 0.2rem 1rem 0.2rem;
+@media (min-width: 780px) {
+  .schedule__secondary {
+    width: 20%;
+  }
+}
+.schedule__secondary--bold {
+  font-weight: 700;
+}
+.schedule__btn {
   background-color: black;
   color: white;
-  font-weight: 700;
   width: 100%;
-  border-radius: 5px;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1rem 0rem 1rem;
 }
 @media (min-width: 780px) {
-  .shows__button {
-    padding: 1rem 2.2rem 1rem 2.2rem;
+  .schedule__btn {
+    width: 30%;
   }
 }
-@media (min-width: 780px) {
-  .shows__button__button-special {
-    padding-bottom: 2rem;
-  }
-}
-@media (min-width: 780px) {
-  .shows {
-    display: flex;
-  }
-}
-.shows__wrapper-test {
+.schedule__list {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem;
+}
+.schedule__info {
+  border-bottom: 2px solid gray;
+}
+@media (min-width: 780px) {
+  .schedule__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+    flex: 1;
+  }
 }
 
 .footer {
