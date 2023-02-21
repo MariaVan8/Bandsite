@@ -1,6 +1,6 @@
 // Select DOM elements
 const commentForm = document.getElementById("comment-form");
-const commentList = document.getElementById("comment-list");
+const commentList = document.getElementById("review-list");
 
 // Initialize comment array with default comments
 const commentArray = [
@@ -35,8 +35,8 @@ commentForm.addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent page from reloading
 
   // Get values from form
-  const nameInput = document.getElementById("name__input");
-  const commentInput = document.getElementById("comment__input");
+  const nameInput = document.getElementById("name-input");
+  const commentInput = document.getElementById("comment-input");
   const name = nameInput.value;
   const comment = commentInput.value;
   const date = new Date();
@@ -61,33 +61,34 @@ commentForm.addEventListener("submit", function (event) {
 // Function to display a single comment on the page
 function displayComment(comment) {
   const commentElement = document.createElement("div");
-  commentElement.classList.add("comment");
+  commentElement.classList.add("review");
+  // commentElement.classList.add("review__right");
 
   const commentLeft = document.createElement("div");
-  commentLeft.classList.add("comment__left");
+  commentLeft.classList.add("review__left");
   commentElement.appendChild(commentLeft);
 
   const commentImage = document.createElement("img");
-  commentImage.classList.add("item__left");
-  commentImage.setAttribute("src", "/Photo-gallery-3.jpg");
+  commentImage.classList.add("element__left");
+  // commentImage.setAttribute("src", "/Photo-gallery-3.jpg");
   commentLeft.appendChild(commentImage);
 
   const commentRight = document.createElement("div");
-  commentRight.classList.add("comment__right");
-  // commentRight.classList.add("item-right");
+  commentRight.classList.add("review__right");
   commentElement.appendChild(commentRight);
 
   const commentItem = document.createElement("div");
-  commentItem.classList.add("item__container");
-  commentItem.classList.add("item__right");
+  commentItem.classList.add("comment_form");
+  commentItem.classList.add("review__wrapper");
   commentRight.appendChild(commentItem);
 
   const nameElement = document.createElement("p");
   nameElement.textContent = comment.name;
+  nameElement.classList.add("review__wrapper");
   commentItem.appendChild(nameElement);
 
   const dateElement = document.createElement("p");
-  dateElement.classList.add("comment__date");
+  dateElement.classList.add("review__date");
   dateElement.textContent = comment.date.toDateString();
   commentItem.appendChild(dateElement);
 

@@ -321,97 +321,148 @@ img {
   }
 }
 
-.comment__title {
-  font-weight: 700;
+.comment_title {
+  font-weight: 600;
   font-size: 2rem;
-  padding: 1rem 1rem 0.5rem 2.5rem;
-}
-.comment__wrapper {
+  justify-content: left;
+  align-items: flex-start;
   display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 60vh;
-  gap: 3rem;
-  padding: 1rem 2.5rem;
-}
-.comment__left {
-  width: 4rem;
-  display: flex;
-  margin-top: 1rem;
-}
-.comment__image {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  position: relative;
-}
-.comment__right {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.comment__name {
-  padding: 1rem;
-  border-radius: 2px;
-}
-.comment__text {
-  padding: 3rem;
-  border-radius: 2px;
-  text-align: left;
-}
-.comment__button {
-  background-color: black;
-  color: white;
-  font-weight: 700;
+  color: #323232;
+  padding: 1rem 3rem 0rem 1.5rem;
 }
 
 .comments__section {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.comment_name {
+  font-size: 1rem;
+  color: #afafaf;
+  font-weight: 500;
+}
+
+.comment_comment {
+  font-size: 1rem;
+  color: #afafaf;
+  font-weight: 500;
+}
+
+.comments {
   display: flex;
   flex-direction: column;
   padding: 2rem;
   justify-content: center;
   align-items: center;
+  background-color: orange;
 }
-.comments__section__wrapper {
+.comments__wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
-  padding-top: 1rem;
+  padding: 1rem;
 }
-.comments__section__left {
+.comments__left {
   display: flex;
   padding-top: 1rem;
 }
-.comments__section__right {
+.comments__right {
   display: flex;
   flex-direction: column;
 }
 
-.comment {
-  gap: 1rem;
+.comment__image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url("../assets/Images/Mohan-muruge.jpg");
+  background-size: cover;
+}
+
+.name-input {
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(249, 248, 248);
+  border-color: rgb(221, 219, 219);
+}
+
+.comment__input {
+  width: 100%;
+  border-color: rgb(221, 219, 219);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(249, 248, 248);
+}
+
+.btn__container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  height: 3rem;
+  color: white;
+  background-color: black;
+  width: 100%;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+#review-list {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.review {
   font-size: 1.5rem;
   display: flex;
+  justify-content: space-between;
   align-self: start;
+  border-color: 1px solid gray;
+  border-bottom: 1px solid gray;
+  margin: 0.5rem;
+  width: 100%;
 }
-.comment__left {
+.review__left {
   display: flex;
+  width: 10rem;
 }
-.comment__left__title {
-  font-weight: 700;
-  font-size: 2rem;
-  justify-content: left;
-  align-items: flex-start;
+.review__wrapper {
+  width: 90%;
   display: flex;
+  padding: 1rem 0.5rem;
+  justify-content: space-between;
+  gap: 1rem;
 }
-
-#comment-list {
+.review__right {
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
-  align-items: center;
-  justify-content: center;
-  width: 60%;
+  padding-bottom: 1rem;
+}
+.review__date {
+  color: #afafaf;
+  font-size: 1rem;
+}
+
+.element__left {
+  background-color: gray;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .footer {
