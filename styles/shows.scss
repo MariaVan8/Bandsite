@@ -171,7 +171,7 @@ li {
     font-size: 1rem;
     color: $primary-color-clear;
     font-weight: 500;
-    padding: 2rem 4rem 1rem 1rem;
+    padding: 2rem 4rem 0rem 0rem;
     @include tablet {
       font-size: 1.5rem;
     }
