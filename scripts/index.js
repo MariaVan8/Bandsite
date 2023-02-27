@@ -1,68 +1,79 @@
+const apiUrl = "https://project-1-api.herokuapp.com/";
+const apiKey = "4f81f939-9fb5-4ace-991c-228a92ce7b27";
+
 // Select DOM elements
 const commentForm = document.getElementById("comment-form");
 const commentList = document.getElementById("review-list");
+const nameInput = document.getElementById("name-input");
+const commentInput = document.getElementById("comment-input");
 
-// Initialize comment array with default comments
-const commentArray = [
-  {
-    name: "Connor Walton",
-    comment: `This is art. This is inexplicable magic expressed in the purest way,
-        everything that makes up this majestic work deserves reverence. Let
-        us appreciate this for what it is and what it contains`,
-    date: new Date("02/17/2021"),
-  },
-  {
-    name: "Emilie Beach",
-    comment: `I feel so blessed to have seen them in person. What a show! They
-        were just perfection. If there was one day of my life I could
-        relieve, this would be it. What an incredible day.`,
-    date: new Date("01/09/2021"),
-  },
-  {
-    name: "Miles Acosta",
-    comment: `I can't stop listening. Every time I hear one of their songs - the
-        vocals - it gives me goosebumps. What a beautiful expression of
-        creativity. Can't get enough.`,
-    date: new Date("12/20/2020"),
-  },
-];
+//
+let commentArray = [];
 
-// Display all comments on page load
-commentArray.forEach(displayComment);
+// Function to reset border color
 
-// Event listener for submitting a new comment
-commentForm.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent page from reloading
+axios
+  .get(`${apiUrl}comments?api_key=${apiKey}`)
+  .then((response) => {
+    console.log("response", response);
 
-  // Get values from form
-  const nameInput = document.getElementById("name-input");
-  const commentInput = document.getElementById("comment-input");
-  const name = nameInput.value;
-  const comment = commentInput.value;
-  const date = new Date();
+    const commentData = response.data;
+    console.log("data: ", commentData);
 
-  // Construct new comment object
-  const newComment = { name, comment, date };
+    commentData.forEach(displayComment);
+    commentData.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
-  // Add new comment to comment array
-  commentArray.unshift(newComment);
+commentForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-  // Clear comment list on page
-  commentList.innerHTML = "";
+  // Check if name is empty
+  if (nameInput.value === "") {
+    nameInput.style.borderColor = "#D22D2D";
+  } else {
+    nameInput.style.borderColor = "#E1E1E1";
+  }
 
-  // Display all comments on page
-  commentArray.forEach(displayComment);
+  // Check if comment is empty
+  if (commentInput.value === "") {
+    commentInput.style.borderColor = "#D22D2D";
+  } else {
+    commentInput.style.borderColor = "#E1E1E1";
+  }
 
-  // Clear input fields
-  nameInput.value = "";
-  commentInput.value = "";
+  if (nameInput.value !== "" && commentInput.value !== "") {
+    const name = nameInput.value;
+    console.log(name);
+    const comment = commentInput.value;
+
+    const newComment = { name, comment };
+
+    axios
+      .post(`${apiUrl}comments?api_key=${apiKey}`, newComment)
+      .then((response) => {
+        const addedComment = response.data;
+        commentArray.unshift(addedComment);
+        displayComment(addedComment);
+
+        nameInput.value = "";
+        commentInput.value = "";
+        nameInput.style.borderColor = "#E1E1E1"; // reset border color
+        commentInput.style.borderColor = "#E1E1E1"; // reset border color
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 });
 
 // Function to display a single comment on the page
 function displayComment(comment) {
-  const commentElement = document.createElement("div");
+  const commentElement = document.createElement("li");
   commentElement.classList.add("review");
-  // commentElement.classList.add("review__right");
 
   const commentLeft = document.createElement("div");
   commentLeft.classList.add("review__left");
@@ -70,7 +81,6 @@ function displayComment(comment) {
 
   const commentImage = document.createElement("img");
   commentImage.classList.add("element__left");
-  // commentImage.setAttribute("src", "/Photo-gallery-3.jpg");
   commentLeft.appendChild(commentImage);
 
   const commentRight = document.createElement("div");
@@ -78,23 +88,32 @@ function displayComment(comment) {
   commentElement.appendChild(commentRight);
 
   const commentItem = document.createElement("div");
-  commentItem.classList.add("comment_form");
+  // commentItem.classList.add("comment_form");
   commentItem.classList.add("review__wrapper");
   commentRight.appendChild(commentItem);
 
   const nameElement = document.createElement("p");
   nameElement.textContent = comment.name;
-  nameElement.classList.add("review__wrapper");
+  nameElement.classList.add("review__name");
   commentItem.appendChild(nameElement);
 
   const dateElement = document.createElement("p");
   dateElement.classList.add("review__date");
-  dateElement.textContent = comment.date.toDateString();
+
+  const timestamp = comment.timestamp;
+  const formattedDate = new Date(timestamp).toLocaleDateString();
+  dateElement.textContent = formattedDate;
   commentItem.appendChild(dateElement);
 
   const commentTextElement = document.createElement("p");
   commentTextElement.textContent = comment.comment;
   commentRight.appendChild(commentTextElement);
 
-  commentList.appendChild(commentElement);
+  if (commentList) {
+    if (commentList.childNodes.length > 0) {
+      commentList.insertBefore(commentElement, commentList.childNodes[0]);
+    } else {
+      commentList.appendChild(commentElement);
+    }
+  }
 }

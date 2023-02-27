@@ -10,7 +10,7 @@
   <body>
     <!-- NAV BAR -->
     <nav class="nav">
-      <a href="./index.html" class="nav__logo">
+      <a href="../index.html" class="nav__logo">
         <img
           src="../assets/Logo/Logo-bandsite.svg"
           alt="logo"
@@ -25,15 +25,15 @@
     </nav>
     <!-- HERO -->
     <section class="hero">
-      <p class="hero__small-title">Beautiful Beasts Album</p>
       <div class="hero__title--container">
+        <p class="hero__small-title">Beautiful Beasts Album</p>
+
         <p class="hero__item">Queen of Yellow x</p>
         <p class="hero__item">For The Stings</p>
       </div>
-      <div class="hero__frame">
+      <div class="hero__framee">
         <iframe
-          width="100%"
-          height="166"
+          class="hero__frame"
           scrolling="no"
           s
           frameborder="no"
@@ -44,36 +44,38 @@
     </section>
 
     <!-- SHEDULE -->
-    <h1 class="schedule__title">Shows</h1>
-    <section class="schedule">
-      <ul class="schedule__list"></ul>
+    <div class="schedule__section">
+      <h1 class="schedule__title">Shows</h1>
+      <div class="schedule">
+        <ul class="schedule__list"></ul>
+      </div>
 
       <!-- //footer// -->
-    </section>
+    </div>
     <footer class="footer">
       <div class="footer__item footer__item--large">
         <h2 class="footer__title">Get in Touch</h2>
         <div class="footer__socials">
           <a href="https://www.instagram.com/"
             ><img
-              src="./assets/Icons/SVG/Icon-instagram.svg"
+              src="../assets/Icons/SVG/Icon-instagram.svg"
               alt=""
               class="footer__icon"
           /></a>
           <a href="https://www.facebook.com/"
             ><img
-              src="./assets/Icons/SVG/Icon-facebook.svg"
+              src="../assets/Icons/SVG/Icon-facebook.svg"
               alt=""
               class="footer__icon"
           /></a>
           <a href="https://twitter.com/?lang=en-ca"
             ><img
-              src="./assets/Icons/SVG/Icon-twitter.svg"
+              src="../assets/Icons/SVG/Icon-twitter.svg"
               alt=""
               class="footer__icon"
           /></a>
         </div>
-        <a href="./index.html" class="footer__logo--top">
+        <a href="../index.html" class="footer__logo--top">
           <img src="../assets/Logo/Logo-bandsite.svg" alt="logo" class="logo" />
         </a>
       </div>
@@ -111,7 +113,7 @@
         </div>
       </div>
       <div class="footer__item">
-        <a href="./index.html" class="footer__logo--bottom">
+        <a href="../index.html" class="footer__logo--bottom">
           <img src="../assets/Logo/Logo-bandsite.svg" alt="logo" />
         </a>
         <p class="footer__separator">
@@ -119,6 +121,7 @@
         </p>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../scripts/build-shows-page.js"></script>
   </body>
 </html>

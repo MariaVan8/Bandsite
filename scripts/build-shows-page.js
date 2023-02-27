@@ -1,64 +1,7 @@
-const showData = [
-  {
-    title1: "DATE",
-    title2: "VENUE",
-    title3: "LOCATION",
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS",
-  },
-  {
-    title1: "DATE",
-    title2: "VENUE",
-    title3: "LOCATION",
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-    button: "BUT TICKETS",
-  },
-  {
-    title1: "DATE",
-    title2: "VENUE",
-    title3: "LOCATION",
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS",
-  },
-  {
-    title1: "DATE",
-    title2: "VENUE",
-    title3: "LOCATION",
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS",
-  },
-  {
-    title1: "DATE",
-    title2: "VENUE",
-    title3: "LOCATION",
-    date: "Fri Nov 26 2021",
-    venue: "Ronald Lane",
-    location: "Moscow Center",
-    button: "BUY TICKETS",
-  },
-  {
-    title1: "DATE",
-    title2: "VENUE",
-    title3: "LOCATION",
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS",
-  },
-];
-
 const showList = document.querySelector(".schedule__list");
-console.log(showList);
-for (let i = 0; i < showData.length; i++) {
-  console.log(showData[i]);
+
+function displayShow(show) {
+  console.log(showList);
 
   const showItem = document.createElement("li");
   showItem.classList.add("schedule__item");
@@ -67,33 +10,34 @@ for (let i = 0; i < showData.length; i++) {
   showBox.classList.add("schedule__info");
 
   const showDate = document.createElement("p");
-  showDate.innerText = showData[i].title1;
+  showDate.innerText = "DATE";
   showDate.classList.add("schedule__main");
 
   const showDay = document.createElement("p");
-  showDay.innerText = showData[i].date;
+  const dateObj = new Date(show.date);
+  showDay.innerText = dateObj.toDateString();
   showDay.classList.add("schedule__secondary");
   showDay.classList.add("schedule__secondary--bold");
 
   const showVenue = document.createElement("p");
-  showVenue.innerText = showData[i].title2;
+  showVenue.innerText = "VENUE";
   showVenue.classList.add("schedule__main");
 
   const showPlace = document.createElement("p");
-  showPlace.innerText = showData[i].venue;
+  showPlace.innerText = show.place;
   showPlace.classList.add("schedule__secondary");
 
   const showLocation = document.createElement("p");
-  showLocation.innerText = showData[i].title3;
+  showLocation.innerText = "LOCATION";
   showLocation.classList.add("schedule__main");
 
   const showCity = document.createElement("p");
-  showCity.innerText = showData[i].location;
+  showCity.innerText = show.location;
   showCity.classList.add("schedule__secondary");
 
   const showButton = document.createElement("button");
-  showButton.innerText = showData[i].button;
-  showButton.classList.add("schedule__btn");
+  showButton.innerText = "BUY TICKETS";
+  showButton.classList.add("schedule__button");
 
   showBox.appendChild(showDate);
   showBox.appendChild(showDay);
@@ -105,3 +49,38 @@ for (let i = 0; i < showData.length; i++) {
   showItem.appendChild(showBox);
   showList.appendChild(showItem);
 }
+
+const apiUrl = "https://project-1-api.herokuapp.com/";
+const apiKey = "4f81f939-9fb5-4ace-991c-228a92ce7b27";
+const getRequest = "showdates";
+
+let showData = [];
+function getData() {
+  axios
+    .get(`${apiUrl}${getRequest}?api_key=${apiKey}`)
+    .then((response) => {
+      // console.log("response: ", response);
+      const showData = response.data;
+      showData.forEach((show) => {
+        displayShow(show);
+      });
+      console.log("Show data Arraaaaay: ", showData);
+    })
+
+    .catch((error) => {
+      crossOriginIsolated.log("error", error);
+    });
+}
+const paragraphs = document.querySelectorAll(".schedule__item");
+function paragraphClick(event) {
+  paragraphs.forEach((paragraphs) => {
+    paragraphs.classList.remove("selected");
+  });
+  event.currentTarget.classList.add("selected");
+}
+
+console.log("show dataaaaa: ", showData);
+console.log("showLiiiiist:", showList);
+
+getData();
+displayShow();

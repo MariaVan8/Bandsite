@@ -130,7 +130,7 @@
         <img class="comment__image" alt="">
       </div>
      <div class="comments__wrapper comments__right">
-      <form id="comment-form">
+      <form id="comment-form" novalidate>
         <label for="name-input" class="comment_name">NAME</label>
         <input type="text" id="name-input" class="name-input" required placeholder="Enter your name" ></input><br>
         <label for="comment-input" class="comment_comment">COMMENT</label>
@@ -143,7 +143,7 @@
       
     
   </div>
-      <div id="review-list"></div>
+      <ul id="review-list"></ul>
     
    
 
@@ -154,19 +154,19 @@
         <div class="footer__socials">
           <a href="https://www.instagram.com/"
             ><img
-              src="./assets/Icons/SVG/Icon-instagram.svg"
+              src="../assets/Icons/SVG/Icon-instagram.svg"
               alt=""
               class="footer__icon"
           /></a>
           <a href="https://www.facebook.com/"
             ><img
-              src="./assets/Icons/SVG/Icon-facebook.svg"
+              src="../assets/Icons/SVG/Icon-facebook.svg"
               alt=""
               class="footer__icon"
           /></a>
           <a href="https://twitter.com/?lang=en-ca"
             ><img
-              src="./assets/Icons/SVG/Icon-twitter.svg"
+              src="../assets/Icons/SVG/Icon-twitter.svg"
               alt=""
               class="footer__icon"
           /></a>
@@ -217,6 +217,7 @@
         </p>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
